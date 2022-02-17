@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#00BCD4"
+        android:text="WELCOME TO MEMORY GAME"
+        android:textColorLink="#3F51B5"
+        android:textSize="26sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/messageToUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Choose the difficulty of the game:"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <Button
+        android:id="@+id/easy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:onClick="setDifficult"
+        android:text="Easy game"
+        app:layout_constraintStart_toStartOf="@+id/messageToUser"
+        app:layout_constraintTop_toBottomOf="@+id/messageToUser" />
+
+    <Button
+        android:id="@+id/normal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:onClick="setDifficult"
+        android:text="Normal game"
+        app:layout_constraintStart_toEndOf="@+id/easy"
+        app:layout_constraintTop_toTopOf="@+id/easy" />
+
+    <Button
+        android:id="@+id/hard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="setDifficult"
+        android:text="Hard game"
+        app:layout_constraintEnd_toEndOf="@+id/messageToUser"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/normal"
+        app:layout_constraintTop_toTopOf="@+id/normal" />
+
+    <TextView
+        android:id="@+id/timeLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="TIME LEFT"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="24sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/easy" />
+
+    <TextView
+        android:id="@+id/showTimeLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="24sp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="@+id/textView"
+        app:layout_constraintTop_toTopOf="@+id/timeLeft" />
+
+    <TableLayout
+        android:id="@+id/tableGame"
+        android:layout_width="360dp"
+        android:layout_height="300dp"
+        android:layout_marginTop="15dp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="@+id/hard"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/timeLeft"
+        app:layout_constraintTop_toBottomOf="@+id/timeLeft">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:weightSum="4">
+
+            <ImageView
+                android:id="@+id/question00"
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:clickable="false"
+                android:onClick="clickCard"
+                android:transitionName="position00"
+                app:srcCompat="@drawable/question" />
+
+            <ImageView
+                android:id="@+id/question01"
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:clickable="false"
+                android:onClick="clickCard"
+                android:transitionName="position01"
+                app:srcCompat="@drawable/question" />
+
+            <ImageView
+                android:id="@+id/question02"
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:clickable="false"
+                android:onClick="clickCard"
+                android:transitionName="position02"
+                app:srcCompat="@drawable/question" />
+
+            <ImageView
+                android:id="@+id/question03"
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:clickable="false"
+                android:onClick="clickCard"
+                android:transitionName="position03"
+                app:srcCompat="@drawable/question" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:weightSum="4">
+
+            <ImageView
+                android:id="@+id/question10"
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:clickable="false"
+                android:onClick="clickCard"
+                android:transitionName="position10"
+                app:srcCompat="@drawable/question" />
+
+            <ImageView
+                android:id="@+id/question11"
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:clickable="false"
+                android:onClick="clickCard"
+                android:transitionName="position11"
+                app:srcCompat="@drawable/question" />
+
+            <ImageView
+                android:id="@+id/question12"
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:clickable="false"
+                android:onClick="clickCard"
+                android:transitionName="position12"
+                app:srcCompat="@drawable/question" />
+
+            <ImageView
+                android:id="@+id/question13"
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:clickable="false"
+                android:onClick="clickCard"
+                android:transitionName="position13"
+                app:srcCompat="@drawable/question" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:weightSum="4">
+
+            <ImageView
+                android:id="@+id/question20"
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:clickable="false"
+                android:onClick="clickCard"
+                android:transitionName="position20"
+                app:srcCompat="@drawable/question" />
+
+            <ImageView
+                android:id="@+id/question21"
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:clickable="false"
+                android:onClick="clickCard"
+                android:transitionName="position21"
+                app:srcCompat="@drawable/question" />
+
+            <ImageView
+                android:id="@+id/question22"
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:clickable="false"
+                android:onClick="clickCard"
+                android:transitionName="position22"
+                app:srcCompat="@drawable/question" />
+
+            <ImageView
+                android:id="@+id/question23"
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:clickable="false"
+                android:onClick="clickCard"
+                android:transitionName="position23"
+                app:srcCompat="@drawable/question" />
+        </TableRow>
+
+    </TableLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
